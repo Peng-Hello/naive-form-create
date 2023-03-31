@@ -1,4 +1,12 @@
 # Naive Form Create
+<p>
+<img src="https://img.shields.io/badge/build-passing-brightgreen">
+<img src="https://img.shields.io/github/license/Peng-Hello/naive-form-create">
+<img src="https://img.shields.io/badge/version-v1.0-blue">
+</p>
+
+[English](./doc/en.md)
+
 Naive UI 表单生成器, 使用 JSON 配置即可生成对应的表单代码！
 
 ## 特点
@@ -57,7 +65,7 @@ https://naive-form-create.netlify.app/
       ] // 选项数组,参考 Naive UI 官方的写法
  }
 ```
-`children` : 表示 `n-fomr` 里面的子元素
+`children` : 表示 `n-form` 里面的子元素
 
 #### n-input 配置字段说明
 `el` : 值为 `input`
@@ -87,5 +95,6 @@ https://naive-form-create.netlify.app/
 ## 目前支持
 -  n-input 的生成
 -  n-select 的生成
+
 ## 技术栈
 - Vue 3.0
