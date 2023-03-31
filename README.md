@@ -6,6 +6,9 @@ Naive UI 表单生成器, 使用 JSON 配置即可生成对应的表单代码！
 - 支持生成校验代码
 - 易扩展
 
+## Playground
+https://naive-form-create.netlify.app/
+
 ## 怎么使用？
 通常来说，按照初始化好的格式。你大概可以自己推测出它的大致用法的。
 
