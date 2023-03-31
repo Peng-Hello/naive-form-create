@@ -13,6 +13,8 @@ declare global {
   const createFormItem: typeof import('./logic/creater')['createFormItem']
   const createInputItem: typeof import('./logic/creater')['createInputItem']
   const createSelectItem: typeof import('./logic/creater')['createSelectItem']
+  const createUseMessage: typeof import('./logic/creater')['createUseMessage']
+  const createValidateFunction: typeof import('./logic/creater')['createValidateFunction']
   const createVueScript: typeof import('./logic/creater')['createVueScript']
   const createVueTemplate: typeof import('./logic/creater')['createVueTemplate']
   const customRef: typeof import('vue')['customRef']

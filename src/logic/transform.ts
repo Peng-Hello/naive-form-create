@@ -1,6 +1,7 @@
 import { createFormGroup } from "./creater";
 import type { Ref } from "vue";
 import { getJson } from "./getStructureJson";
+
 export const context = {
   optionsList: [] as any[] | null,
   rules: false as boolean | null,
@@ -13,6 +14,7 @@ type StructureJson = {
   model_name: string | null;
   ref: string | null;
   check_btn: boolean | null;
+  fun_name: string | null;
   rules: boolean | null;
   optionsList: any[] | null;
   children: any[] | null;
@@ -25,7 +27,7 @@ export function transform(structureJson: StructureJson, rulesRef: Ref<any>) {
   context.model_name = structureJson.model_name
     ? structureJson.model_name
     : null;
-  context.check_btn = structureJson.check_btn ? structureJson.check_btn : null;
+  context.check_btn = structureJson.check_btn ? true : false;
   let scriptPart = "";
   let templatePart = "";
   if (structureJson.children) {
@@ -61,6 +63,8 @@ export function transform(structureJson: StructureJson, rulesRef: Ref<any>) {
       rule = JSON.stringify(rulesJson);
     }
   }
+  console.log(context.check_btn);
+
   scriptPart =
     scriptPart +
     createCodePart(
@@ -69,7 +73,14 @@ export function transform(structureJson: StructureJson, rulesRef: Ref<any>) {
       structureJson.ref!,
       context.optionsList!,
       rule
+    ) +
+    createUseMessage(context.check_btn) +
+    createValidateFunction(
+      structureJson.ref!,
+      structureJson.fun_name!,
+      context.check_btn
     );
+
   return (
     createVueScript(formatJavascript(scriptPart)) + formatHTML(templatePart)
   );

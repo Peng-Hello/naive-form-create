@@ -1,5 +1,33 @@
 import { Lang } from "../config";
 import { context } from "@/logic/transform";
+
+export function createUseMessage(check_btn: boolean) {
+  const temp = check_btn ? `const message = useMessage();` : "";
+  return temp;
+}
+
+export function createValidateFunction(
+  ref: string,
+  funName: string,
+  check_btn: boolean
+) {
+  return check_btn
+    ? `
+  function ${funName ? funName : "handleValidateButtonClick"}(e: MouseEvent) {
+    e.preventDefault()
+    ${ref}.value?.validate((errors) => {
+      if (!errors) {
+        message.success("验证成功");
+      } else {
+        console.log(errors);
+        message.error("验证失败");
+      }
+    });
+  }
+  `
+    : "";
+}
+
 export function createCodePart(
   model_name: string,
   model: JSON,
