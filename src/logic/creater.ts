@@ -28,6 +28,22 @@ export function createValidateFunction(
     : "";
 }
 
+export function createValidateBtn(
+  check_btn: boolean,
+  btnName: string,
+  funName: string
+) {
+  return check_btn
+    ? `
+  <n-button
+    type="primary"
+    @click="${funName ? funName : "handleValidateButtonClick"}"
+    style="width: 100%"
+    >${btnName ? btnName : "验证"}</n-button>
+  `
+    : "";
+}
+
 export function createCodePart(
   model_name: string,
   model: JSON,

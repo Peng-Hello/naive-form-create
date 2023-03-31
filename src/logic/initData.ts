@@ -7,6 +7,7 @@ export const structureInitData = `{
   "model_name": "model_name",
   "ref": "formRef",
   "check_btn": false,
+  "btn_name":"校验",
   "fun_name":"handleValidateButtonClick",
   "rules": true,
   "optionsList": [

@@ -14,6 +14,7 @@ type StructureJson = {
   model_name: string | null;
   ref: string | null;
   check_btn: boolean | null;
+  btn_name: string | null;
   fun_name: string | null;
   rules: boolean | null;
   optionsList: any[] | null;
@@ -52,7 +53,14 @@ export function transform(structureJson: StructureJson, rulesRef: Ref<any>) {
       context.model_name!,
       childrenTemp
     );
-    templatePart = createVueTemplate(formGroup);
+    const template =
+      formGroup +
+      createValidateBtn(
+        context.check_btn,
+        structureJson.btn_name!,
+        structureJson.fun_name!
+      );
+    templatePart = createVueTemplate(template);
   } else {
     // 错误格式
   }
@@ -63,7 +71,6 @@ export function transform(structureJson: StructureJson, rulesRef: Ref<any>) {
       rule = JSON.stringify(rulesJson);
     }
   }
-  console.log(context.check_btn);
 
   scriptPart =
     scriptPart +

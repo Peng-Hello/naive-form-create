@@ -14,6 +14,7 @@ declare global {
   const createInputItem: typeof import('./logic/creater')['createInputItem']
   const createSelectItem: typeof import('./logic/creater')['createSelectItem']
   const createUseMessage: typeof import('./logic/creater')['createUseMessage']
+  const createValidateBtn: typeof import('./logic/creater')['createValidateBtn']
   const createValidateFunction: typeof import('./logic/creater')['createValidateFunction']
   const createVueScript: typeof import('./logic/creater')['createVueScript']
   const createVueTemplate: typeof import('./logic/creater')['createVueTemplate']
