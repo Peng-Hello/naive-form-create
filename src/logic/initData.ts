@@ -43,11 +43,11 @@ export const rulesInitData = `{
   "test": {
     "required": true,
     "message": "请输入姓名",
-    "trigger": "blur"
+    "trigger": ["blur","input"]
   },
   "test1": {
     "required": true,
     "message": "请输入姓名",
-    "trigger": "blur"
+    "trigger": ["blur","input"]
   }
 }`;
